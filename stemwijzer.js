@@ -1,11 +1,16 @@
 // Stemwijzer // // Stemwijzer // // Stemwijzer // 
-// main pagina // index pagina // 
-// main pagina // index pagina //
+
+
+var vraag = 'test'
 
 startButton.onclick = load;
 back.onclick = index;
 
+
 index()
+
+// main pagina // index pagina // 
+// main pagina // index pagina //
 
 function index(){
 
@@ -28,7 +33,7 @@ document.getElementById("blueText").innerHTML = 'Test uw politieke voorkeur aan 
 // vragen pagina // inladen vragen pagina //
 
 function load(){
-	document.getElementById("blueText").innerHTML = 'onderwerp vraag'
+	document.getElementById("blueText").innerHTML = vraag
 
 
 	document.getElementById('startButton').style.display ='none'
