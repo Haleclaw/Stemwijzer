@@ -1,3 +1,10 @@
 body{
 	background-image: url("../img/image.png");
 	background-size: cover !important;
+}
+#pagina{
+	height: 600px;
+}
+#vindenPartijen{
+    margin-top: 50px;
+}

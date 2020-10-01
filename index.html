@@ -8,24 +8,38 @@
 
 <body>
 
-<div class='w3-content w3-panel w3-white'>
-	<img id='logo' src="img/stemwijzer.png" alt="stemwijzer">
+<div id='pagina' class='w3-content w3-panel w3-white'>
+	<buton id='back' class='w3-btn w3-circle w3-xlarge'> <i class="fas fa-arrow-left"></i> </buton>
+	
+
+    <div id='Header'class='w3-container'>
+    	<img id='logo' src="img/stemwijzer.png" alt="stemwijzer">
+		<h3 id='stemWijzerHeader'><b> StemWijzer Tweede Kamer 2017 </b></h3>
+    </div>
+       
 
     <div class='w3-container'>
-		<h3 id='stemWijzerHeader'><b> StemWijzer Tweede Kamer 2017 </b></h3>
-		<h3 id='blueText' class='w3-text-cyan'><b> Test uw politieke voorkeur aan de hand van 30 stellingen </b></h3>
+ 		<h3 id='blueText' class='w3-text-cyan'><b> Test uw politieke voorkeur aan de hand van 30 stellingen </b></h3>
 		<h3 id='vraagText' class='w3-text-black'><b> StemWijzer vragen </b></h3>
     </div>
 	
 
 	<div class='w3-container '>
 		<buton id='startButton' class='w3-btn w3-black w3-hover-blue w3-right w3-xlarge'> Start </buton>
-		<buton id='eens' class='w3-btn w3-black w3-hover-blue w3-right w3-xlarge'> eens </buton>
-		<buton id='oneens' class='w3-btn w3-black w3-hover-blue w3-right w3-xlarge'> oneens </buton>
-		<buton id='beide' class='w3-btn w3-black w3-hover-blue w3-right w3-xlarge'> geen van beide </buton>
-    </div>
+	</div>	
 
 
+	<div id='buttons' class='w3-container'>
+	    <buton id='eens' class='w3-btn w3-black w3-hover-blue w3-xlarge'> eens </buton>
+		<buton id='oneens' class='w3-btn w3-black w3-hover-blue w3-xlarge'> oneens </buton>
+		<buton id='beide' class='w3-btn w3-black w3-hover-blue w3-xlarge'> geen van beide </buton>
+		<buton id='overslaan' class='w3-btn w3-text-blue-grey w3-xlarge'> sla deze vraag over <i class="fas fa-arrow-right"></i> </buton>
+
+		<buton id='vindenPartijen' class='w3-button w3-large'> <i class="fas fa-cloud w3-text-cyan"></i> <i class="fas fa-caret-right"></i> wat vinden de partijen? </buton>
+
+	</div>
+
+    
 	<div id='beperking'class='w3-container'>
 		<p class="w3-block"> <i class="fas fa-user-cog w3-text-cyan fa-3x"></i>   Bekijk de toegankelijke versie voor mensen met een visuele beperking </p>
 	</div>
@@ -47,6 +61,7 @@
 	</div>
 
 	<script src="stemwijzer.js"></script>
+	<script src="http://stemwijzer.dvc-icta.nl/data.js"></script>
 
 
 </div>

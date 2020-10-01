@@ -1,28 +1,46 @@
 // Stemwijzer // // Stemwijzer // // Stemwijzer // 
-
+// main pagina // index pagina // 
+// main pagina // index pagina //
 
 startButton.onclick = load;
+back.onclick = index;
+
+index()
+
+function index(){
+
 
 document.getElementById('vraagText').style.display ='none'
-document.getElementById('eens').style.display ='none'
-document.getElementById('oneens').style.display ='none'
-document.getElementById('beide').style.display ='none'
+document.getElementById('buttons').style.display ='none'
+document.getElementById('back').style.display ='none'
+
+document.getElementById('startButton').style.display ='inline-block'
+document.getElementById('Header').style.display ='inline-block'
+document.getElementById('beperking').style.display ='inline-block'
+document.getElementById('cookies').style.display ='inline-block'
+document.getElementById('info').style.display ='inline-block'
+
+document.getElementById("blueText").innerHTML = 'Test uw politieke voorkeur aan de hand van 30 stellingen'
+
+}
+
+// vragen pagina // inladen vragen pagina //
+// vragen pagina // inladen vragen pagina //
 
 function load(){
 	document.getElementById("blueText").innerHTML = 'onderwerp vraag'
 
-	document.getElementById('startButton').style.display ='none'
 
-	document.getElementById('vraagText').style.display ='inline-block'
-	document.getElementById('stemWijzerHeader').style.display ='none'
-	document.getElementById('logo').style.display ='none'
+	document.getElementById('startButton').style.display ='none'
+	document.getElementById('Header').style.display ='none'
 	document.getElementById('beperking').style.display ='none'
 	document.getElementById('cookies').style.display ='none'
 	document.getElementById('info').style.display ='none'
 
-	document.getElementById('eens').style.display ='inline-block'
-	document.getElementById('oneens').style.display ='inline-block'
-	document.getElementById('beide').style.display ='inline-block'
+
+	document.getElementById('vraagText').style.display ='inline-block'
+	document.getElementById('buttons').style.display ='inline-block'
+	document.getElementById('back').style.display ='inline-block'
 
 
 
