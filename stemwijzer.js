@@ -1,10 +1,11 @@
 // Stemwijzer // // Stemwijzer // // Stemwijzer // 
+// Stemwijzer // // Stemwijzer // // Stemwijzer // 
 
-
-var vraag = 'test'
 
 startButton.onclick = load;
 back.onclick = index;
+
+var getal = 0
 
 
 index()
@@ -33,7 +34,9 @@ document.getElementById("blueText").innerHTML = 'Test uw politieke voorkeur aan 
 // vragen pagina // inladen vragen pagina //
 
 function load(){
-	document.getElementById("blueText").innerHTML = vraag
+	document.getElementById("blueText").innerHTML = subjects[getal].title
+	document.getElementById("vraagText").innerHTML = subjects[getal].statement
+	console.log('load')
 
 
 	document.getElementById('startButton').style.display ='none'
@@ -47,6 +50,32 @@ function load(){
 	document.getElementById('buttons').style.display ='inline-block'
 	document.getElementById('back').style.display ='inline-block'
 
+	eens.onclick = questions;
+	oneens.onclick = questions;
+	beide.onclick = questions;
+	overslaan.onclick = questions;
+	back.onclick = terug;
+}
 
+// vragen display // // vragen display //
+// vragen display // // vragen display //
 
+function questions(){
+
+   getal++
+
+   if( back == true ){
+   		console.log('back')
+   }
+
+   load()
+}
+
+// back functie // // back functie //
+// back functie // // back functie //
+
+function terug(){
+	console.log('terug')
+	var back = true
+	questions()
 }
