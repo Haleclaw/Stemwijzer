@@ -46,6 +46,9 @@ function loadQuestionPage(){
 
 	eens.onclick = nextQuestionTrue;
 	oneens.onclick = nextQuestionDisagree;
+	back.onclick = backQuestion;
+	overslaan.onclick = noAnswer;
+	beide.onclick = noAnswer;
 }
 
 // nextQuestion // save True //
@@ -54,9 +57,9 @@ function loadQuestionPage(){
 function nextQuestionTrue(){
 	console.log('loadQuestionPageTrue')
 
-	questionNumber++
+    answers[questionNumber] = 'true'
 
-	answers[questionNumber] = 'true'
+	questionNumber++
 
     loadQuestionPage()
 }
@@ -67,10 +70,33 @@ function nextQuestionTrue(){
 function nextQuestionDisagree(){
 	console.log('loadQuestionPageDisagree')
 
-	questionNumber++
+    answers[questionNumber] = 'Disagree'
 
-	answers[questionNumber] = 'Disagree'
+	questionNumber++
 
 	loadQuestionPage()
 }
+
+// backQuestion // Go back //
+// backQuestion // Go back //
+
+function backQuestion(){
+	console.log('backQuestion')
+
+	questionNumber--
+
+	loadQuestionPage()
+}
+
+// noAnswer // // noAnswer //
+// noAnswer // // noAnswer //
+
+function noAnswer(){
+	console.log('noAnswer')
+
+    questionNumber++
+
+	loadQuestionPage()
+}
+
 
