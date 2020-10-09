@@ -2,11 +2,11 @@
 // Stemwijzer // // Stemwijzer // // Stemwijzer // 
 
 
-startButton.onclick = load;
+startButton.onclick = loadQuestionPage;
 back.onclick = index;
 
-var getal = 0
-
+var questionNumber = 0
+var answers = ['empty','empty','empty']
 
 index()
 
@@ -15,67 +15,62 @@ index()
 
 function index(){
 
-
-document.getElementById('vraagText').style.display ='none'
+document.getElementById('questiongText').style.display ='none'
 document.getElementById('buttons').style.display ='none'
 document.getElementById('back').style.display ='none'
 
 document.getElementById('startButton').style.display ='inline-block'
 document.getElementById('Header').style.display ='inline-block'
-document.getElementById('beperking').style.display ='inline-block'
-document.getElementById('cookies').style.display ='inline-block'
 document.getElementById('info').style.display ='inline-block'
 
 document.getElementById("blueText").innerHTML = 'Test uw politieke voorkeur aan de hand van 30 stellingen'
 
 }
 
-// vragen pagina // inladen vragen pagina //
-// vragen pagina // inladen vragen pagina //
+// loadQuestionPage // loadQuestionPage //
+// loadQuestionPage // loadQuestionPage //
 
-function load(){
-	document.getElementById("blueText").innerHTML = subjects[getal].title
-	document.getElementById("vraagText").innerHTML = subjects[getal].statement
-	console.log('load')
+function loadQuestionPage(){
+	document.getElementById("blueText").innerHTML = subjects[questionNumber].title
+	document.getElementById("questiongText").innerHTML = subjects[questionNumber].statement
 
 
 	document.getElementById('startButton').style.display ='none'
 	document.getElementById('Header').style.display ='none'
-	document.getElementById('beperking').style.display ='none'
-	document.getElementById('cookies').style.display ='none'
 	document.getElementById('info').style.display ='none'
 
 
-	document.getElementById('vraagText').style.display ='inline-block'
+	document.getElementById('questiongText').style.display ='inline-block'
 	document.getElementById('buttons').style.display ='inline-block'
 	document.getElementById('back').style.display ='inline-block'
 
-	eens.onclick = questions;
-	oneens.onclick = questions;
-	beide.onclick = questions;
-	overslaan.onclick = questions;
-	back.onclick = terug;
+	eens.onclick = nextQuestionTrue;
+	oneens.onclick = nextQuestionDisagree;
 }
 
-// vragen display // // vragen display //
-// vragen display // // vragen display //
+// nextQuestion // save True //
+// nextQuestion // save True //
 
-function questions(){
+function nextQuestionTrue(){
+	console.log('loadQuestionPageTrue')
 
-   getal++
+	questionNumber++
 
-   if( back == true ){
-   		console.log('back')
-   }
+	answers[questionNumber] = 'true'
 
-   load()
+    loadQuestionPage()
 }
 
-// back functie // // back functie //
-// back functie // // back functie //
+// nextQuestion // save disagree //
+// nextQuestion // save disagree //
 
-function terug(){
-	console.log('terug')
-	var back = true
-	questions()
+function nextQuestionDisagree(){
+	console.log('loadQuestionPageDisagree')
+
+	questionNumber++
+
+	answers[questionNumber] = 'Disagree'
+
+	loadQuestionPage()
 }
+
