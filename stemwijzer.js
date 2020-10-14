@@ -31,6 +31,15 @@ document.getElementById("blueText").innerHTML = 'Test uw politieke voorkeur aan 
 // loadQuestionPage // loadQuestionPage //
 
 function loadQuestionPage(){
+	if (questionNumber == 29 ){
+		console.log('loadQuestionPageResult')
+
+		document.getElementById('buttons').style.display ='none'
+		document.getElementById('questiongText').style.display ='none'
+		document.getElementById('blueText').style.display ='none'
+	}
+
+	else{
 	document.getElementById("blueText").innerHTML = subjects[questionNumber].title
 	document.getElementById("questiongText").innerHTML = subjects[questionNumber].statement
 
@@ -49,6 +58,7 @@ function loadQuestionPage(){
 	back.onclick = backQuestion;
 	overslaan.onclick = noAnswer;
 	beide.onclick = noAnswer;
+	}
 }
 
 // nextQuestion // save True //
