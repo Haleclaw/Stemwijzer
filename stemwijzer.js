@@ -18,6 +18,7 @@ function index(){
 document.getElementById('questiongText').style.display ='none'
 document.getElementById('buttons').style.display ='none'
 document.getElementById('back').style.display ='none'
+document.getElementById('importantSubjects').style.display ='none'
 
 document.getElementById('startButton').style.display ='inline-block'
 document.getElementById('Header').style.display ='inline-block'
@@ -34,10 +35,21 @@ function loadQuestionPage(){
 	if (questionNumber == 29 ){
 		console.log('loadQuestionPageResult')
 
-		document.getElementById('buttons').style.display ='none'
-		document.getElementById('questiongText').style.display ='none'
-		document.getElementById('blueText').style.display ='none'
+		document.getElementById('oneens').style.display ='none'
+		document.getElementById('beide').style.display ='none'
+		document.getElementById('overslaan').style.display ='none'
+		document.getElementById('vindenPartijen').style.display ='none'
+
+		document.getElementById('importantSubjects').style.display ='inline-block'
+
+		document.getElementById("eens").innerHTML ='ga verder'
+
+		document.getElementById("blueText").innerHTML ='Zijn er onderwerpen die u extra belangrijk vindt?'
+		document.getElementById("questiongText").innerHTML ='Aangevinkte stellingen tellen extra mee bij het berekenen van het resulaat.'
+
+		eens.onclick = takePoliticalparty;
 	}
+	
 
 	else{
 	document.getElementById("blueText").innerHTML = subjects[questionNumber].title
@@ -108,5 +120,3 @@ function noAnswer(){
 
 	loadQuestionPage()
 }
-
-
