@@ -49,29 +49,27 @@ function loadQuestionPage(){
 
 		eens.onclick = takePoliticalparty;
 	}
-	
-
-	else{
-	document.getElementById("blueText").innerHTML = subjects[questionNumber].title
-	document.getElementById("questiongText").innerHTML = subjects[questionNumber].statement
+			else{
+				document.getElementById("blueText").innerHTML = subjects[questionNumber].title
+				document.getElementById("questiongText").innerHTML = subjects[questionNumber].statement
 
 
-	document.getElementById('startButton').style.display ='none'
-	document.getElementById('Header').style.display ='none'
-	document.getElementById('info').style.display ='none'
+				document.getElementById('startButton').style.display ='none'
+				document.getElementById('Header').style.display ='none'
+				document.getElementById('info').style.display ='none'
 
 
-	document.getElementById('questiongText').style.display ='inline-block'
-	document.getElementById('buttons').style.display ='inline-block'
-	document.getElementById('back').style.display ='inline-block'
+				document.getElementById('questiongText').style.display ='inline-block'
+				document.getElementById('buttons').style.display ='inline-block'
+				document.getElementById('back').style.display ='inline-block'
 
-	eens.onclick = nextQuestionTrue;
-	oneens.onclick = nextQuestionDisagree;
-	back.onclick = backQuestion;
-	overslaan.onclick = noAnswer;
-	beide.onclick = noAnswer;
+				eens.onclick = nextQuestionTrue;
+				oneens.onclick = nextQuestionDisagree;
+				back.onclick = backQuestion;
+				overslaan.onclick = noAnswer;
+				beide.onclick = noAnswer;
+				}
 	}
-}
 
 // nextQuestion // save True //
 // nextQuestion // save True //
