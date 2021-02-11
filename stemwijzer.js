@@ -17,6 +17,7 @@ function index(){
 
 document.getElementById('questiongText').style.display ='none'
 document.getElementById('buttons').style.display ='none'
+document.getElementById('checkbox').style.display ='none'
 document.getElementById('back').style.display ='none'
 document.getElementById('importantSubjects').style.display ='none'
 
@@ -41,6 +42,9 @@ function loadQuestionPage(){
 		document.getElementById('vindenPartijen').style.display ='none'
 
 		document.getElementById('importantSubjects').style.display ='inline-block'
+
+		document.getElementById('checkbox').style.display ='inline-block'
+		document.getElementById("checkboxText").innerHTML ='test'
 
 		document.getElementById("eens").innerHTML ='ga verder'
 
