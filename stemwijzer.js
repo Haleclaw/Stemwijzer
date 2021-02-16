@@ -14,18 +14,17 @@ index()
 // main pagina // index pagina //
 
 function index(){
+	document.getElementById('questiongText').style.display ='none'
+	document.getElementById('buttons').style.display ='none'
+	document.getElementById('checkbox').style.display ='none'
+	document.getElementById('back').style.display ='none'
+	document.getElementById('importantSubjects').style.display ='none'
 
-document.getElementById('questiongText').style.display ='none'
-document.getElementById('buttons').style.display ='none'
-document.getElementById('checkbox').style.display ='none'
-document.getElementById('back').style.display ='none'
-document.getElementById('importantSubjects').style.display ='none'
+	document.getElementById('startButton').style.display ='inline-block'
+	document.getElementById('Header').style.display ='inline-block'
+	document.getElementById('info').style.display ='inline-block'
 
-document.getElementById('startButton').style.display ='inline-block'
-document.getElementById('Header').style.display ='inline-block'
-document.getElementById('info').style.display ='inline-block'
-
-document.getElementById("blueText").innerHTML = 'Test uw politieke voorkeur aan de hand van 30 stellingen'
+	document.getElementById("blueText").innerHTML = 'Test uw politieke voorkeur aan de hand van 30 stellingen'
 
 }
 
@@ -33,7 +32,7 @@ document.getElementById("blueText").innerHTML = 'Test uw politieke voorkeur aan 
 // loadQuestionPage // loadQuestionPage //
 
 function loadQuestionPage(){
-	if (questionNumber == 29 ){
+	if (questionNumber == subjects.length ){
 		console.log('loadQuestionPageResult')
 
 		document.getElementById('oneens').style.display ='none'
@@ -44,7 +43,6 @@ function loadQuestionPage(){
 		document.getElementById('importantSubjects').style.display ='inline-block'
 
 		document.getElementById('checkbox').style.display ='inline-block'
-		document.getElementById("checkboxText").innerHTML ='test'
 
 		document.getElementById("eens").innerHTML ='ga verder'
 
