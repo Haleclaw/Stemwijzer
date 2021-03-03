@@ -6,7 +6,7 @@ startButton.onclick = loadQuestionPage;
 back.onclick = index;
 
 var questionNumber = 0
-var answers = ['empty','empty','empty']
+var answers = []
 
 index()
 
@@ -50,6 +50,15 @@ function loadQuestionPage(){
 		document.getElementById("questiongText").innerHTML ='Aangevinkte stellingen tellen extra mee bij het berekenen van het resulaat.'
 
 		eens.onclick = takePoliticalparty;
+		
+		  // display checkbox // display checkbox //
+  		  // display checkbox // display checkbox //
+
+  			for(var i = 0; i < 5; i++) {
+				document.getElementById("checkboxText").innerHTML ='test'
+				
+			}
+
 	}
 			else{
 				document.getElementById("blueText").innerHTML = subjects[questionNumber].title
@@ -79,7 +88,7 @@ function loadQuestionPage(){
 function nextQuestionTrue(){
 	console.log('loadQuestionPageTrue')
 
-    answers[questionNumber] = 'true'
+    answers[questionNumber] = 'pro'
 
 	questionNumber++
 
@@ -92,7 +101,7 @@ function nextQuestionTrue(){
 function nextQuestionDisagree(){
 	console.log('loadQuestionPageDisagree')
 
-    answers[questionNumber] = 'Disagree'
+    answers[questionNumber] = 'contra'
 
 	questionNumber++
 
@@ -119,4 +128,25 @@ function noAnswer(){
     questionNumber++
 
 	loadQuestionPage()
+}
+
+// answerResult // answerResult //
+// answerResult // answerResult //
+
+function takePoliticalparty(){ 
+	for(b = 0; b < answers.length; b++) {
+		for(a=0;a<subjects[b].parties.length;a++){
+			if(answers[b] == subjects[b].parties[a].position){
+				console.log("je bent het eens met " + subjects[b].parties[a].name);
+				// 
+			}
+			else{
+				console.log("je bent het niet eens met " + subjects[b].parties[a].name);
+			}
+		  }
+		}
+	  
+	
+
+
 }
