@@ -54,8 +54,10 @@ function loadQuestionPage(){
 		  // display checkbox // display checkbox //
   		  // display checkbox // display checkbox //
 
-  			for(var i = 0; i < 5; i++) {
-				document.getElementById("checkboxText").innerHTML ='test'
+  			for(var i = 0; i < subjects.length; i++) {
+				var divBlock = document.createElement("div");                
+       			divBlock.className = "w3-container";
+       			checkbox.appendChild(divBlock);
 				
 			}
 
