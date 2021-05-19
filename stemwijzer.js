@@ -121,48 +121,48 @@ function loadQuestionPage(){
 // nextQuestion // save True //
 
 function nextQuestionTrue(){
-	console.log('loadQuestionPageTrue')
+	console.log('loadQuestionPageTrue');
 
-    answers[questionNumber] = 'pro'
+    answers[questionNumber] = 'pro';
 
-	questionNumber++
+	questionNumber++;
 
-    loadQuestionPage()
+    loadQuestionPage();
 }
 
 // nextQuestion // save disagree //
 // nextQuestion // save disagree //
 
 function nextQuestionDisagree(){
-	console.log('loadQuestionPageDisagree')
+	console.log('loadQuestionPageDisagree');
 
-    answers[questionNumber] = 'contra'
+    answers[questionNumber] = 'contra';
 
-	questionNumber++
+	questionNumber++;
 
-	loadQuestionPage()
+	loadQuestionPage();
 }
 
 // backQuestion // Go back //
 // backQuestion // Go back //
 
 function backQuestion(){
-	console.log('backQuestion')
+	console.log('backQuestion');
 
-	questionNumber--
+	questionNumber--;
 
-	loadQuestionPage()
+	loadQuestionPage();
 }
 
 // noAnswer // // noAnswer //
 // noAnswer // // noAnswer //
 
 function noAnswer(){
-	console.log('noAnswer')
+	console.log('noAnswer');
 
-    questionNumber++
+    questionNumber++;
 
-	loadQuestionPage()
+	loadQuestionPage();
 }
 
 // answerResult // answerResult //
@@ -173,6 +173,10 @@ function takePoliticalparty(){
 		for(a=0;a<subjects[b].parties.length;a++){
 			if(answers[b] == subjects[b].parties[a].position){
 				console.log("je bent het eens met " + subjects[b].parties[a].name);
+					if(subjects[b].parties[a].name == partijScore[b]){
+						partijScore[b]++
+						console.log("Partijscore")
+					}
 				// 
 			}
 			else{
