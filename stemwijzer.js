@@ -9,31 +9,13 @@ var questionNumber = 0
 var answers = []
 
 let partijScore = {
-	"vvd" : 0,
-	"cda" : 0,
-	"pvv" : 0,
-	"d66" : 0,
-	"GroenLinks" : 0,
-	"sp" : 0,
-	"pvda" : 0,
-	"ChristenUnie" : 0,
-	"Partij voor de Dieren" : 0,
-	"sgp" : 0,
-	"denk" : 0,
-	"Forum voor Democratie" : 0,
-	"Lokaal in de kamer" : 0,
-	"OndernemersPartij" : 0,
-	"VNL" : 0,
-	"Nieuwe Wegen" : 0,
-	"De Burger Beweging" : 0,
-	"Piratenpartij" : 0,
-	"Artikel 1" : 0,
-	"Liberatische Partij" : 0,
-	"50Plus" : 0,
-	"Vrijzinnige Partij" : 0,
-	"Liberatische Partij" : 0,
-	"Niet Stemmers" : 0,
 }
+
+for (let index = 0; index < parties.length; index++) {
+	const element = partijScore[index];
+	console.log(parties[index].name);
+}
+
 
 index()
 
