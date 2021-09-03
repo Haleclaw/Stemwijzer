@@ -7,15 +7,20 @@ back.onclick = index;
 
 var questionNumber = 0
 var answers = []
+var partijNames = []
+var partijScore = []
 
-let partijScore = {
+for (let index = 0; index < parties.length; index++){
+	partijNames.push (parties[index].name)
 }
 
-for (let index = 0; index < parties.length; index++) {
-	const element = partijScore[index];
-	console.log(parties[index].name);
-}
 
+for (let index = 0; index < parties.length; index++){
+	partijScore[index] = {
+		name: partijNames[index],
+		score: 0
+	}
+}
 
 index()
 
