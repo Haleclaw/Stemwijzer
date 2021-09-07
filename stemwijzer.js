@@ -14,7 +14,6 @@ for (let index = 0; index < parties.length; index++){
 	partijNames.push (parties[index].name)
 }
 
-
 for (let index = 0; index < parties.length; index++){
 	partijScore[index] = {
 		name: partijNames[index],
@@ -68,7 +67,7 @@ function loadQuestionPage(){
 		  // display checkbox // display checkbox //
   		  // display checkbox // display checkbox //
 
-  			for(var i = 0; i < subjects.length; i++) {
+  			 for(var i = 0; i < subjects.length; i++) {
 				var divBlock = document.createElement("input");                
        			divBlock.className = "w3-check";
        			checkbox.appendChild(divBlock);
@@ -77,7 +76,7 @@ function loadQuestionPage(){
        			textBlock.className = "checkbox" + i;
        			checkbox.appendChild(textBlock);
 
-				document.getElementsByClassName("checkbox" + i).innerHTML = subjects[i].title
+				document.getElementsByClassName("checkbox" + i).innerHTML = subjects[i].title 
 				
 			}
 
@@ -147,6 +146,8 @@ function backQuestion(){
 function noAnswer(){
 	console.log('noAnswer');
 
+	answers[questionNumber] = 'none';
+
     questionNumber++;
 
 	loadQuestionPage();
@@ -160,9 +161,10 @@ function takePoliticalparty(){
 		for(a=0;a<subjects[b].parties.length;a++){
 			if(answers[b] == subjects[b].parties[a].position){
 				console.log("je bent het eens met " + subjects[b].parties[a].name);
-					if(subjects[b].parties[a].name == partijScore[b]){
-						partijScore[b]++
-						console.log("Partijscore")
+					for(c = 0; c < partijScore.length; c++){
+						if(subjects[b].parties[a].name === partijScore[c]['name']){
+							partijScore[a]['score']++
+						}
 					}
 				// 
 			}
@@ -172,7 +174,25 @@ function takePoliticalparty(){
 		  }
 		}
 	  
+	console.log(partijScore)
+	answerDisplay()
+}
+
+// answerDisplay // // answerDisplay //
+// answerDisplay // // answerDisplay //
+
+function answerDisplay() {
+	document.getElementById('questiongText').style.display ='none'
+	document.getElementById('buttons').style.display ='none'
+	document.getElementById('back').style.display ='none'
+
+	document.getElementById('checkbox').style.display ='none'
+	document.getElementById("blueText").innerHTML = 'Resultaten'
+
+	for(var index = 0; index < partijScore.length; index++){
+		document.getElementById("namePrint").innerHTML += partijScore[index]['name'] + ' ' + partijScore[index]['score'] + '<br>' ;
+}
+
 	
-
-
+	
 }
