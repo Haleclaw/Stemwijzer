@@ -29,7 +29,7 @@ index()
 function index(){
 	document.getElementById('questiongText').style.display ='none'
 	document.getElementById('buttons').style.display ='none'
-	document.getElementById('checkbox').style.display ='none'
+	document.getElementById('checkboxList').style.display ='none'
 	document.getElementById('back').style.display ='none'
 	document.getElementById('importantSubjects').style.display ='none'
 
@@ -55,7 +55,7 @@ function loadQuestionPage(){
 
 		document.getElementById('importantSubjects').style.display ='inline-block'
 
-		document.getElementById('checkbox').style.display ='inline-block'
+		document.getElementById('checkboxList').style.display ='inline-block'
 
 		document.getElementById("eens").innerHTML ='ga verder'
 
@@ -68,16 +68,18 @@ function loadQuestionPage(){
   		  // display checkbox // display checkbox //
 
   			 for(var i = 0; i < subjects.length; i++) {
-				var divBlock = document.createElement("input");                
-       			divBlock.className = "w3-check";
-       			checkbox.appendChild(divBlock);
+				var checkbox = document.createElement("input");                
+       			checkbox.className = "w3-check";
+				checkbox.id = 'checkbox' + i;
+				checkbox.type = 'checkbox';
+				checkbox.setAttribute("onclick", "checkboxCheck("+i+")")
+       			checkboxList.appendChild(checkbox);
 
-				var textBlock = document.createElement("p");                
-       			textBlock.className = "checkbox" + i;
-       			checkbox.appendChild(textBlock);
+				var checkboxText = document.createElement("p");                
+				checkboxText.id = "checkboxText" + i;
+       			checkboxList.appendChild(checkboxText);
 
-				document.getElementsByClassName("checkbox" + i).innerHTML = subjects[i].title 
-				
+				document.getElementById("checkboxText" + i).innerHTML = subjects[i].title
 			}
 
 	}
@@ -101,6 +103,21 @@ function loadQuestionPage(){
 				overslaan.onclick = noAnswer;
 				beide.onclick = noAnswer;
 				}
+	}
+	// checkboxCheck // // checkboxCheck //
+	// checkboxCheck // // checkboxCheck //
+
+	function checkboxCheck(i){
+		var checkbox = document.getElementById('checkbox' + i)
+  		if (checkbox.checked == true){
+			  console.log('checkboxTrue')
+			  for(c = 0; c < i.length; c++) {
+				console.log('test')
+			  }
+		}
+		else{
+			
+		}
 	}
 
 // nextQuestion // save True //
@@ -186,7 +203,7 @@ function answerDisplay() {
 	document.getElementById('buttons').style.display ='none'
 	document.getElementById('back').style.display ='none'
 
-	document.getElementById('checkbox').style.display ='none'
+	document.getElementById('checkboxList').style.display ='none'
 	document.getElementById("blueText").innerHTML = 'Resultaten'
 
 	for(var index = 0; index < partijScore.length; index++){
