@@ -111,9 +111,23 @@ function loadQuestionPage(){
 		var checkbox = document.getElementById('checkbox' + i)
   		if (checkbox.checked == true){
 			  console.log('checkboxTrue')
-			  for(c = 0; c < i.length; c++) {
-				console.log('test')
+			  for(c = 0; c < partijNames.length; c++) {
+			  	if(document.getElementById('checkboxText' + i).innerText == subjects[c].title){
+					console.log('text is gelijk')
+					if(subjects[c].parties[c].position == 'pro'){
+						console.log('hij is pro')
+						if(subjects[c].parties.name == partijScore[c]){
+							console.log('Hij is goed aangekomen!')
+
+						}
+					}
+
+				}
+
 			  }
+		}
+		if (checkbox.checked == false){
+			console.log('checkboxFalse')
 		}
 		else{
 			
