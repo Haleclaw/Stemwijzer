@@ -67,19 +67,19 @@ function loadQuestionPage(){
 		  // display checkbox // display checkbox //
   		  // display checkbox // display checkbox //
 
-  			 for(var i = 0; i < subjects.length; i++) {
+  			 for(var checkboxNumber = 0; checkboxNumber < subjects.length; checkboxNumber++) {
 				var checkbox = document.createElement("input");                
        			checkbox.className = "w3-check";
-				checkbox.id = 'checkbox' + i;
+				checkbox.id = 'checkbox' + checkboxNumber;
 				checkbox.type = 'checkbox';
-				checkbox.setAttribute("onclick", "checkboxCheck("+i+")")
+				checkbox.setAttribute("onclick", "checkboxCheck("+checkboxNumber+")")
        			checkboxList.appendChild(checkbox);
 
 				var checkboxText = document.createElement("p");                
-				checkboxText.id = "checkboxText" + i;
+				checkboxText.id = "checkboxText" + checkboxNumber;
        			checkboxList.appendChild(checkboxText);
 
-				document.getElementById("checkboxText" + i).innerHTML = subjects[i].title
+				document.getElementById("checkboxText" + checkboxNumber).innerHTML = subjects[checkboxNumber].title
 			}
 
 	}
@@ -107,27 +107,40 @@ function loadQuestionPage(){
 	// checkboxCheck // // checkboxCheck //
 	// checkboxCheck // // checkboxCheck //
 
-	function checkboxCheck(i){
-		var checkbox = document.getElementById('checkbox' + i)
+	function checkboxCheck(checkboxNumber){
+		var checkbox = document.getElementById('checkbox' + checkboxNumber)
+		var checkboxText = document.getElementById('checkboxText' + checkboxNumber).innerText
+
   		if (checkbox.checked == true){
 			  console.log('checkboxTrue')
-			  
+
 			  // checks if text == data.js // 
-			  for(c = 0; c < parties.length; c++) {
-			  	if(document.getElementById('checkboxText' + i).innerText == subjects[c].title){
-					console.log('text is gelijk')
-					
+			  for(c = 0; c < subjects.length; c++) {
+				var currentSubject = subjects[c];
+
+			  	if( checkboxText == currentSubject.title){
 					// checks all pro in data.js //
-					for(d = 0; d < partijNames.length; d++) {
-						if(subjects[c].parties[c].position == 'pro'){
-							console.log('pro ' + subjects[d].parties[c]['name'])
-						}
+					for(d = 0; d < parties.length-1; d++) {
+						var currentParty = currentSubject.parties[d]
+
+						
 						// checks if partijName == partijScore //
-						if(subjects[d].parties[c]['name'] == partijScore[c]['name']){
-							console.log('extra points to ' + partijScore[c]['name'] )
-							partijScore[c]['score']++
+						for(e = 0; e < partijScore.length; e++){
+							var partyScore = partijScore[e];	
+								if(currentParty.name == partyScore.name){
+									if(currentParty.position == answers[e]){
+										console.log('pro ' + currentParty.name)
+										console.log('extra points to ' + partyScore.name )
+											partijScore[d]['score']++
+											
+									
+							
+						}
+							
 						}	
+						
 					}
+				}
 				}
 			  }
 		}
