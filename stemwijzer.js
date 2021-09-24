@@ -110,48 +110,66 @@ function loadQuestionPage(){
 	function checkboxCheck(checkboxNumber){
 		var checkbox = document.getElementById('checkbox' + checkboxNumber)
 		var checkboxText = document.getElementById('checkboxText' + checkboxNumber).innerText
-
+		
   		if (checkbox.checked == true){
 			  console.log('checkboxTrue')
 
 			  // checks if text == data.js // 
 			  for(c = 0; c < subjects.length; c++) {
 				var currentSubject = subjects[c];
+				var myAnswer = answers[c]
 
 			  	if( checkboxText == currentSubject.title){
 					// checks all pro in data.js //
-					for(d = 0; d < parties.length-1; d++) {
-						var currentParty = currentSubject.parties[d]
-
+					for(d = 0; d < currentSubject.parties.length; d++) {
+						var currentParty = currentSubject.parties[d]			
 						
 						// checks if partijName == partijScore //
 						for(e = 0; e < partijScore.length; e++){
-							var partyScore = partijScore[e];	
+							var partyScore = partijScore[e];
+
 								if(currentParty.name == partyScore.name){
-									if(currentParty.position == answers[e]){
-										console.log('pro ' + currentParty.name)
+									if(currentParty.position == myAnswer){
 										console.log('extra points to ' + partyScore.name )
-											partijScore[d]['score']++
-											
-									
-							
+										partyScore.score++
+									}
+								}	
 						}
-							
-						}	
-						
 					}
-				}
 				}
 			  }
 		}
+
 		// checkbox false // checkbox false //
 		// checkbox false // checkbox false //
 
 		if (checkbox.checked == false){
 			console.log('checkboxFalse')
-		}
-		else{
-			
+
+				  // checks if text == data.js // 
+				  for(c = 0; c < subjects.length; c++) {
+					var currentSubject = subjects[c];
+					var myAnswer = answers[c]
+	
+					  if( checkboxText == currentSubject.title){
+						// checks all pro in data.js //
+						for(d = 0; d < currentSubject.parties.length; d++) {
+							var currentParty = currentSubject.parties[d]			
+							
+							// checks if partijName == partijScore //
+							for(e = 0; e < partijScore.length; e++){
+								var partyScore = partijScore[e];
+								
+									if(currentParty.name == partyScore.name){
+										if(currentParty.position == myAnswer){
+											console.log('remove extra points from ' + partyScore.name )
+											partyScore.score--
+										}
+									}	
+							}
+						}
+					}
+				  }
 		}
 	}
 
