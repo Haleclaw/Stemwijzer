@@ -68,16 +68,20 @@ function loadQuestionPage(){
   		  // display checkbox // display checkbox //
 
   			 for(var checkboxNumber = 0; checkboxNumber < subjects.length; checkboxNumber++) {
+				var div = document.createElement('div');
+				checkboxList.appendChild(div);
+
+				div.className = 'checkboxDiv' 
 				var checkbox = document.createElement("input");                
        			checkbox.className = "w3-check";
 				checkbox.id = 'checkbox' + checkboxNumber;
 				checkbox.type = 'checkbox';
 				checkbox.setAttribute("onclick", "checkboxCheck("+checkboxNumber+")")
-       			checkboxList.appendChild(checkbox);
+       			div.appendChild(checkbox);
 
 				var checkboxText = document.createElement("p");                
 				checkboxText.id = "checkboxText" + checkboxNumber;
-       			checkboxList.appendChild(checkboxText);
+       			div.appendChild(checkboxText);
 
 				document.getElementById("checkboxText" + checkboxNumber).innerHTML = subjects[checkboxNumber].title
 			}

@@ -8,3 +8,8 @@ body{
 #vindenPartijen{
     margin-top: 50px;
 }
+.checkboxDiv{
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 10px;
+}
