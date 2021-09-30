@@ -231,19 +231,24 @@ function noAnswer(){
 // answerResult // answerResult //
 
 function takePoliticalparty(){ 
-	for(b = 0; b < answers.length; b++) {
-		for(a=0;a<subjects[b].parties.length;a++){
-			if(answers[b] == subjects[b].parties[a].position){
-				console.log("je bent het eens met " + subjects[b].parties[a].name);
+	for(b = 0; b < answers.length; b++){
+		for(a= 0;a<subjects[b].parties.length;a++){
+			var partyPosition = subjects[b].parties[a].position
+			var partyName = subjects[b].parties[a].name
+
+			// checks if answers == party position //
+			if(answers[b] == partyPosition){
+				console.log("je bent het eens met " + partyPosition );
+
+					// checks if partyName == partijscore // 
 					for(c = 0; c < partijScore.length; c++){
-						if(subjects[b].parties[a].name === partijScore[c]['name']){
+						if(partyName === partijScore[c]['name']){
 							partijScore[a]['score']++
 						}
 					}
-				// 
 			}
 			else{
-				console.log("je bent het niet eens met " + subjects[b].parties[a].name);
+				console.log("je bent het niet eens met " + partyName);
 			}
 		  }
 		}
