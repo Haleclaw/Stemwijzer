@@ -27,15 +27,12 @@ index()
 // main pagina // index pagina //
 
 function index(){
-	document.getElementById('questiongText').style.display ='none'
-	document.getElementById('buttons').style.display ='none'
-	document.getElementById('checkboxList').style.display ='none'
-	document.getElementById('back').style.display ='none'
-	document.getElementById('importantSubjects').style.display ='none'
 
-	document.getElementById('startButton').style.display ='inline-block'
-	document.getElementById('Header').style.display ='inline-block'
-	document.getElementById('info').style.display ='inline-block'
+	document.getElementById("questiongText").classList.add('invisible');
+	document.getElementById("buttons").classList.add('invisible');
+	document.getElementById("checkboxlist").classList.add('invisible');
+	document.getElementById("back").classList.add('invisible');
+	document.getElementById("importantSubjects").classList.add('invisible');
 
 	document.getElementById("blueText").innerHTML = 'Test uw politieke voorkeur aan de hand van 30 stellingen'
 
@@ -48,14 +45,13 @@ function loadQuestionPage(){
 	if (questionNumber == subjects.length ){
 		console.log('loadQuestionPageResult')
 
-		document.getElementById('oneens').style.display ='none'
-		document.getElementById('beide').style.display ='none'
-		document.getElementById('overslaan').style.display ='none'
-		document.getElementById('vindenPartijen').style.display ='none'
+		document.getElementById("oneens").classList.add('invisible');
+		document.getElementById("beide").classList.add('invisible');
+		document.getElementById("overslaan").classList.add('invisible');
+		document.getElementById("vindenPartijen").classList.add('invisible');
 
-		document.getElementById('importantSubjects').style.display ='inline-block'
-
-		document.getElementById('checkboxList').style.display ='inline-block'
+		document.getElementById("importantSubjects").classList.remove('invisible');
+		document.getElementById("checkboxList").classList.remove('invisible');
 
 		document.getElementById("eens").innerHTML ='ga verder'
 
@@ -91,15 +87,13 @@ function loadQuestionPage(){
 				document.getElementById("blueText").innerHTML = subjects[questionNumber].title
 				document.getElementById("questiongText").innerHTML = subjects[questionNumber].statement
 
+				document.getElementById("startButton").classList.add('invisible');
+				document.getElementById("Header").classList.add('invisible');
+				document.getElementById("info").classList.add('invisible');
 
-				document.getElementById('startButton').style.display ='none'
-				document.getElementById('Header').style.display ='none'
-				document.getElementById('info').style.display ='none'
-
-
-				document.getElementById('questiongText').style.display ='inline-block'
-				document.getElementById('buttons').style.display ='inline-block'
-				document.getElementById('back').style.display ='inline-block'
+				document.getElementById("questiongText").classList.remove('invisible');
+				document.getElementById("buttons").classList.remove('invisible');
+				document.getElementById("back").classList.remove('invisible');
 
 				eens.onclick = nextQuestionTrue;
 				oneens.onclick = nextQuestionDisagree;

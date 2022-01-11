@@ -18,3 +18,9 @@ body{
 p{
 	float: left;
 }
+.invisible{
+	display: none;
+}
+.visible{
+	display: inline-block;
+}
